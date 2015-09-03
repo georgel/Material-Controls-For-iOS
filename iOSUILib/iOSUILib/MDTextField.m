@@ -259,7 +259,10 @@
   if (_inputTextFont == nil) {
     _inputTextFont = [UIFont systemFontOfSize:16];
   }
-
+    if (_centerText == nil) {
+        _centerText = false;
+    }
+    
   _labelView =
       [[UILabel alloc] initWithFrame:CGRectMake(0, 16, self.bounds.size.width,
                                                 _labelsFont.lineHeight)];
@@ -468,6 +471,17 @@
     [self setPlaceholder:_hint];
   }
   [self calculateLabelFrame];
+}
+
+- (void)setCenterText:(BOOL)centerText {
+    _centerText = centerText;
+    if (centerText) {
+        [self.textView setTextAlignment:NSTextAlignmentCenter];
+
+    } else {
+        [self.textView setTextAlignment:NSTextAlignmentLeft];
+
+    }
 }
 
 - (void)setHint:(NSString *)hint {

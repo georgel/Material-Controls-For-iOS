@@ -94,6 +94,7 @@ IB_DESIGNABLE
 @property(nonatomic) BOOL hasError;
 @property(nonatomic) UIFont *labelsFont;
 @property(nonatomic) UIFont *inputTextFont;
+@property(nonatomic) BOOL centerText;
 @property(nonatomic) NSLayoutConstraint *textViewHeightConstraint;
 @property(nonatomic) NSArray *suggestionsDictionary;
 
