@@ -259,9 +259,6 @@
   if (_inputTextFont == nil) {
     _inputTextFont = [UIFont systemFontOfSize:16];
   }
-    if (_centerText == nil) {
-        _centerText = false;
-    }
     
   _labelView =
       [[UILabel alloc] initWithFrame:CGRectMake(0, 16, self.bounds.size.width,
@@ -482,6 +479,15 @@
         [self.textView setTextAlignment:NSTextAlignmentLeft];
 		[self.textField setTextAlignment:NSTextAlignmentLeft];
     }
+}
+
+- (void)setEnableAutoCorrect:(BOOL)enableAutoCorrect {
+	_enableAutoCorrect = enableAutoCorrect;
+	if (enableAutoCorrect) {
+		[self.textField setAutocorrectionType:UITextAutocorrectionTypeDefault];
+	} else {
+		[self.textField setAutocorrectionType:UITextAutocorrectionTypeNo];
+	}
 }
 
 - (void)setHint:(NSString *)hint {
