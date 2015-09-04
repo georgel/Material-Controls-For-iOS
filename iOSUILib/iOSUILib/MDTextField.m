@@ -481,6 +481,19 @@
     }
 }
 
+- (void)setLabelsFont:(UIFont *)labelsFont {
+	_labelsFont = labelsFont;
+	[_labelView setFont:_labelsFont];
+}
+
+- (void)setInputTextFont:(UIFont *)inputTextFont {
+	_inputTextFont = inputTextFont;
+	[_textField setFont:inputTextFont];
+
+	[_textView setFont:inputTextFont];
+
+}
+
 - (void)setEnableAutoCorrect:(BOOL)enableAutoCorrect {
 	_enableAutoCorrect = enableAutoCorrect;
 	if (enableAutoCorrect) {
