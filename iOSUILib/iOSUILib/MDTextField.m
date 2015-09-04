@@ -477,10 +477,10 @@
     _centerText = centerText;
     if (centerText) {
         [self.textView setTextAlignment:NSTextAlignmentCenter];
-
+		[self.textField setTextAlignment:NSTextAlignmentCenter];
     } else {
         [self.textView setTextAlignment:NSTextAlignmentLeft];
-
+		[self.textField setTextAlignment:NSTextAlignmentLeft];
     }
 }
 
