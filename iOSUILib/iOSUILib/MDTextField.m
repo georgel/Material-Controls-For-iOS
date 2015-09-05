@@ -459,6 +459,20 @@
   [_labelView setText:label];
 }
 
+- (void)setShowKeyboardLine:(BOOL)showKeyboardLine {
+    _showKeyboardLine = showKeyboardLine;
+    if (showKeyboardLine) {
+        UIView *inputAccessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0.5)];
+        
+        UIView *keyboardLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
+        keyboardLineView.backgroundColor = [UIColor lightGrayColor];
+        [inputAccessoryView addSubview:keyboardLineView];
+        
+        _textField.inputAccessoryView = inputAccessoryView;
+        _textView.inputAccessoryView = inputAccessoryView;
+    }
+}
+
 - (void)setFloatingLabel:(BOOL)floatingLabel {
   _floatingLabel = floatingLabel;
   if (floatingLabel) {

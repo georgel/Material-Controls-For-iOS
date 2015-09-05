@@ -96,8 +96,11 @@ IB_DESIGNABLE
 @property(nonatomic) UIFont *inputTextFont;
 @property(nonatomic) BOOL centerText;
 @property(nonatomic) BOOL enableAutoCorrect;
+@property(nonatomic) BOOL showKeyboardLine;
+
 @property(nonatomic) NSLayoutConstraint *textViewHeightConstraint;
 @property(nonatomic) NSArray *suggestionsDictionary;
+
 
 @property(nonatomic, weak) id<MDTextFieldDelegate> delegate;
 
